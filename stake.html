@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Criptomoedas</title>
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="dist/css/adminlte.min.css" />
+    <script>
+      window.onload = function () {
+        const name = "Proof of Stake ou Prova de Participação (PoS)";
+        const slug = "stake";
+        const about1 =
+          "Neste método de validação, o criador do próximo bloco é determinado de maneira aleatória. Para participar do “sorteio”, o potencial criador tem que “prender” uma quantidade de moedas à rede blockchain, e neste caso, quanto maior o número de moedas alocadas maiores as chances de ser sorteado.";
+        const about2 =
+          "Além disso, a custódia das moedas dos participantes pela rede, garante, em tese, a integridade da mesma e dos participantes, visto que caso o bloco seja alterado ou comprometido de alguma maneira o infrator perderá todas as suas moedas.";
+        const about3 =
+          "Comparado ao Pow, esse método é muito mais econômico e eficiente, já que não há a necessidade de empregar tamanha força computacional para a solução de uma função.";
+        const previous = "work";
+        const next = "history";
+
+        setTimeout(() => {
+          document.getElementById("name").innerHTML = name;
+          document.getElementById("about1").innerHTML = about1;
+          document.getElementById("about2").innerHTML = about2;
+          document.getElementById("about3").innerHTML = about3;
+          document.getElementById(slug + "-link").classList.add("active");
+          document.getElementById("image").src = "images/" + slug + ".png";
+          document.getElementById("image").style.display = 'inline';
+          if (next) {
+            const nextName = next[0].toUpperCase() + next.slice(1);
+            document.getElementById("next").innerHTML = nextName + " >";
+            document.getElementById("next").href = next + ".html";
+          }
+          if (previous) {
+            const previousName = previous[0].toUpperCase() + previous.slice(1);
+            document.getElementById("previous").innerHTML = "< " + previousName;
+            document.getElementById("previous").href = previous + ".html";
+          }
+        }, 100);
+
+        let counter = 0;
+        const size = about1.length + about2.length + about3.length;
+        setInterval(() => {
+          if (next) {
+            if (counter < 100) {
+              document.getElementById("bar").style.width = counter + "%";
+              counter = counter + (2000-size) * 0.0002;
+            } else {
+              window.location.href = "/" + next + ".html";
+            }
+          }
+        }, 101);
+      };
+    </script>
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"
+              ><i class="fas fa-bars"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      <aside
+        class="main-sidebar sidebar-dark-primary"
+        style="background-color: #7a5800"
+      >
+        <!-- Brand Logo -->
+        <a
+          href="sobre.html"
+          class="brand-link"
+          style="border-bottom: 1px solid white"
+        >
+          <img
+            src="images/crypto.png"
+            alt="Logo"
+            class="brand-image img-circle elevation-3"
+            style="opacity: 0.8"
+          />
+          <span class="brand-text font-weight-light">Criptomoedas</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- SidebarSearch Form -->
+          <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+              <div class="input-group-append"></div>
+            </div>
+          </div>
+
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul
+              class="nav nav-pills nav-sidebar flex-column"
+              data-widget="treeview"
+              role="menu"
+              data-accordion="false"
+            >
+              <li class="nav-item menu-open">
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="/sobre.html" class="nav-link" id="sobre-link">
+                      <img
+                        src="images/sobre.png"
+                        alt="Logo"
+                        class="brand-image img-circle elevation-1"
+                        style="margin-left: 4px; width: 18px; margin-top: -4px"
+                      />
+                      <p>Sobre</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/tipos.html" class="nav-link" id="tipos-link">
+                      <img
+                        src="images/tipos.png"
+                        alt="Logo"
+                        class="brand-image img-circle elevation-1"
+                        style="margin-left: 4px; width: 18px; margin-top: -4px"
+                      />
+                      <p>Tipos</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/work.html" class="nav-link" id="work-link">
+                      <img
+                        src="images/work.png"
+                        alt="Logo"
+                        class="brand-image img-circle elevation-1"
+                        style="margin-left: 4px; width: 18px; margin-top: -4px"
+                      />
+                      <p>Proof of Work</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/stake.html" class="nav-link" id="stake-link">
+                      <img
+                        src="images/stake.png"
+                        alt="Logo"
+                        class="brand-image img-circle elevation-1"
+                        style="margin-left: 4px; width: 18px; margin-top: -4px"
+                      />
+                      <p>Proof of Stake</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/history.html" class="nav-link" id="history-link">
+                      <img
+                        src="images/history.png"
+                        alt="Logo"
+                        class="brand-image img-circle elevation-1"
+                        style="margin-left: 4px; width: 18px; margin-top: -4px"
+                      />
+                      <p>Proof of History</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/bitcoin.html" class="nav-link" id="bitcoin-link">
+                      <img
+                        src="images/bitcoin.png"
+                        alt="Logo"
+                        class="brand-image img-circle elevation-1"
+                        style="margin-left: 4px; width: 18px; margin-top: -4px"
+                      />
+                      <p>Bitcoin</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="/ethereum.html"
+                      class="nav-link"
+                      id="ethereum-link"
+                    >
+                      <img
+                        src="images/ethereum.png"
+                        alt="Logo"
+                        class="brand-image img-circle elevation-1"
+                        style="margin-left: 4px; width: 18px; margin-top: -4px"
+                      />
+                      <p>Ethereum</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/tether.html" class="nav-link" id="tether-link">
+                      <img
+                        src="images/tether.png"
+                        alt="Logo"
+                        class="brand-image img-circle elevation-1"
+                        style="margin-left: 4px; width: 18px; margin-top: -4px"
+                      />
+                      <p>Tether</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/BNB.html" class="nav-link" id="BNB-link">
+                      <img
+                        src="images/BNB.png"
+                        alt="Logo"
+                        class="brand-image img-circle elevation-1"
+                        style="margin-left: 4px; width: 18px; margin-top: -4px"
+                      />
+                      <p>BNB</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/USDC.html" class="nav-link" id="USDC-link">
+                      <img
+                        src="images/USDC.png"
+                        alt="Logo"
+                        class="brand-image img-circle elevation-1"
+                        style="margin-left: 4px; width: 18px; margin-top: -4px"
+                      />
+                      <p>USDC</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <div class="content-wrapper">
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-12">
+                <h1 id="name" class="m-0"></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-body">
+                    <img
+                      id="image"
+                      alt="Logo"
+                      style="
+                        margin-bottom: 24px;
+                        width: 128px;
+                        margin-left: calc(50% - 64px);
+                        display: none;
+                      "
+                    />
+                    <p id="about1" class="card-text"></p>
+                    <p id="about2" class="card-text"></p>
+                    <p id="about3" class="card-text"></p>
+                    <a id="previous" href="#" class="card-link"></a>
+                    <a id="next" href="#" class="card-link float-right"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="main-footer">
+        <div
+          id="bar"
+          style="background-color: black; height: 5px; width: 0%"
+        ></div>
+      </footer>
+    </div>
+
+    <!-- REQUIRED SCRIPTS -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="dist/js/adminlte.min.js"></script>
+  </body>
+</html>
